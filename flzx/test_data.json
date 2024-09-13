@@ -1,0 +1,34 @@
+[
+    {
+        "conversation": [
+            {
+                "role": "user",
+                "content": "content1"
+            },
+            {
+                "role": "assistant",
+                "content": "content2"
+            },
+            {
+                "role": "user",
+                "content": "content3"
+            }
+        ]
+    },
+    {
+        "conversation": [
+            {
+                "role": "user",
+                "content": "content1"
+            },
+            {
+                "role": "assistant",
+                "content": "content2"
+            },
+            {
+                "role": "user",
+                "content": "content3"
+            }
+        ]
+    }
+]
