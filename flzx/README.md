@@ -45,10 +45,10 @@
 最终得分将由客观评测指标得分与主观评测指标得分加权得到
 
 ## 结果提交形式
-提交结果统一命名为`prediction.json`。提交格式参考`res_glm4.json`，其中每一行为一个字典，对应一个测试样例的答案（注意`key`等于`response`时的`value`应该是选手提交的答案）
+提交结果统一命名为`prediction.json`。提交格式参考`prediction.json`，其中每一行为一个字典，对应一个测试样例的答案。
 
 ## 基线系统
-`baseline.py`中提供了一个基于`chatglm4`的代码实现，输入格式参考`test_data.json`，输出格式参考`res_glm4.json`
+`baseline.py`中提供了一个基于`chatglm4`的代码实现，输入格式参考`test_data.json`，输出格式参考`prediction.json`
 
 ## 赛程赛制
 - 9月13日至10月15日，初赛阶段。
