@@ -29,7 +29,7 @@ def get_res(outputpath):
         prompt = prompt_template
         prompt = prompt.replace('{{question_text}}', conversation2str(data['conversation']))
         r = glm4.chat(prompt)
-        l = {"prompt": prompt, "response": r}
+        l = {"id": data['id'], "response": r}
         f_out.write(json.dumps(l, ensure_ascii=False) + '\n')
 
-get_res('./res_glm4.json')
+get_res('./prediction.json')
