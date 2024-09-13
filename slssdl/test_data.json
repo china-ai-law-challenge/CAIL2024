@@ -1,0 +1,13 @@
+[
+    {
+        "id": 0,
+        "title": "",
+        "fact": "",
+        "prosecution": "",
+        "defense": "",
+        "evidence": {
+            "evidence1": "evidence_content1",
+            "evidence2": "evidence_content2"
+        }
+    }
+]
