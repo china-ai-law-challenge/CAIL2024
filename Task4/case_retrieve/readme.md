@@ -8,7 +8,7 @@
 
 #### 数据准备
 
-- 我们对原始数据集进行了初步加工与处理，将原有的”yishen_content“与”ershen_content“字段内容通过规则或人工的方式进行了简单的结构化处理，处理后的部分将包含两个新字段”yishen_background“与“yishen_fact”或”ershen_background“与“ershen_fact”。“····background”主要包含案件的基本信息，如原告、被告、法院等信息；“····fact”主要包含原告或被告述求、法院判决等。
+- 我们对原始数据集进行了初步加工与处理，将原有的”yishen_content“与”ershen_content“字段内容通过规则或人工的方式进行了简单的结构化处理，处理后的部分将包含两个新字段”yishen_background“与“yishen_fact”或”ershen_background“与“ershen_fact”。“····background”主要包含案件的基本信息，如原告、被告、法院等信息；“····fact”主要包含原告或被告诉求、法院判决等。
 
 - 数据格式说明
 
