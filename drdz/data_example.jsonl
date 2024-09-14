@@ -1,0 +1,3 @@
+// Each line is a case. The number of defendants is not fixed (≥2).
+// The fines (i.e. `fine`, `fine_without_amount`) are not one of the prediction targets for this task and are provided only as supplementary information.
+{"id": 0, "fact": "a piece of fact description", "defendants": ["A", "B"], "outcomes": [{"name": "A", "penalty": {"surveillance": 0, "detention": 0, "imprisonment": 12, "death_penalty": false, "life_imprisonment": false, "fine": 5000, "fine_without_amount": false}, "charges": ["xx罪"], "articles": ["xxx"]}, {"name": "B", "penalty": {"surveillance": 0, "detention": 0, "imprisonment": 8, "death_penalty": false, "life_imprisonment": false, "fine": 3000, "fine_without_amount": false}, "charges": ["xx罪"], "articles": ["xxx"]}]}
