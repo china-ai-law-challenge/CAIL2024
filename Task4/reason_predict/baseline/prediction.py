@@ -14,7 +14,7 @@ def get_reason(content):
     pattern = r'本院认为.*?(?=本院认为|$)'
 
     # 使用 re.findall 来找到所有匹配的内容
-    matches = re.findall(pattern, case["ershen_content"], re.DOTALL)
+    matches = re.findall(pattern, content, re.DOTALL)
 
     # 检查是否找到匹配项
     if matches:
