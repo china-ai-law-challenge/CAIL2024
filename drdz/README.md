@@ -106,14 +106,14 @@ $$
 {
     "id": 0,
     "judgments": [{
-        "name": "李某某",
-        "charges": ["走私、贩卖、运输、制造毒品罪"],
-        "articles": ["347-4"],
-        "penalty": 7
+        "name": "A",
+        "charges": ["x罪", "y罪"],
+        "articles": ["xxx", "yyy"],
+        "penalty": 7  // penalty class (0-14)
     }, {
-        "name": "刘某某",
-        "charges": ["走私、贩卖、运输、制造毒品罪"],
-        "articles": ["347-4"],
+        "name": "B",
+        "charges": ["z罪"],
+        "articles": ["zzz"],
         "penalty": 8
     }]
 }
