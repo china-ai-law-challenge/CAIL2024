@@ -31,7 +31,7 @@
 
 - 文件目录说明(包含运行后的文件)
 
-  <img src="dirs.png" style="zoom:70%;" />
+  <img src="dirs.png" style="zoom:50%;" />
 
 - 对于类案检索(case_retrieve)基线
 
