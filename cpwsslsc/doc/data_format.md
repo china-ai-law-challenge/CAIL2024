@@ -41,3 +41,9 @@
     }
 ] 
 ```
+
+# 法理、伦理解释说明
+
+法官说理：除依据法律法规、司法解释的规定外，法官可以运用下列论据论证裁判理由，以提高裁判结论的正当性和可接受性：最高人民法院发布的指导性案例；最高人民法院发布的非司法解释类审判业务规范性文件；公理、情理、经验法则、交易惯例、民间规约、职业伦理；立法说明等立法材料；采取历史、体系、比较等法律解释方法时使用的材料；法理及通行学术观点；与法律、司法解释等规范性法律文件不相冲突的其他论据。
+
+更多解释可见：[这里](https://mp.weixin.qq.com/s?__biz=MzkzMDUzNzgzNA==&mid=2247488662&idx=3&sn=e034cd2a4aecfcc272bfdeb97c5d91dc&chksm=c30eacc4508f09acb5487152ea638ebb9ece1cee256cf9d1c944ca48641485539db5e581dffe&mpshare=1&scene=1&srcid=0828uya6kJryWcw9lX5MgZhs&sharer_shareinfo=d44f98bd64df2a763cbe4db02ebda1a2&sharer_shareinfo_first=cbda01d31991ed775d1a998a05aff664#rd)
