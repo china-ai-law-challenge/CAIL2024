@@ -135,3 +135,10 @@ test_data_path="first_stage_test_300.jsonl"
 ```
 
 运行 `sh run.sh`即可复现baseline。
+
+## Baseline分数
+Baseline在初赛测试集上的分数如下：
+
+| Charge_F1 | Article_F1 | Penalty_Acc | Final_Score |
+| ---- | ---- | ---- | ---- |
+| 0.1937 | 0.1722 | 0.2371 | 0.2046 |
