@@ -65,7 +65,7 @@
 基于初赛的经验，我们在复赛设计了更科学的评测指标，现说明如下：
 
 $$
-score = 0.3 \times rouge \_ score + 0.2 \times bert_score + 0.3 \times llm_score + 0.2 \times key_word_score
+score = 0.3 \times rouge \__{} score + 0.2 \times bert_score + 0.3 \times llm_score + 0.2 \times key_word_score
 $$
 
 - rouge_score: 评价**法律正确性**，通过比较模型生成回答与参考答案之间的文本差异，测量评估回答中关键关键信息的正确性。
