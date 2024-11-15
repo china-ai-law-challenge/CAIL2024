@@ -107,7 +107,7 @@
 ```
 - 状态码： 正常情况下，请使用HTTP状态码200表示成功响应
 调用代码示例:
-```json
+```python
 import requests
 api_url = "https://api.example.com/model"
 
@@ -125,7 +125,7 @@ input_data = {
             "role": "user",
             "content": ""
         }
-        ... //若干轮次的对话
+        ... #若干轮次的对话
     ],
     "id": 0
  }
