@@ -69,7 +69,7 @@
 - HTTP方法： API应当支持POST请求方法。
 - 请求参数： API应接受一个JSON请求体，示例输入如下：
 ```json
-input_data = {
+{
     "id": 0,
     "title": "",
     "fact": "",
