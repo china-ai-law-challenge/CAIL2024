@@ -63,10 +63,75 @@
 ```
 最终 `rouge-l * 0.4 + BertScore * 0.4 + llm_score * 0.2 = 0.534713696`，（超过此分数的队伍进入复赛阶段）
 
+## 封测结果提交形式
+对【裁判文书事实生成】评测而言，采用了“服务-请求”方案进行评估。参赛者需要在本地搭建推理服务，之后评估方会通过“访问服务”的方式获取推理结果。参赛者所提供的推理服务须符合以下接口规范要求。
+- 参赛者需要提供一个API的URL或域名，以便我们能够访问服务。例如：https://api.example.com/model.
+- HTTP方法： API应当支持POST请求方法。
+- 请求参数： API应接受一个JSON请求体，示例输入如下：
+```json
+{
+    "id": 0,
+    "title": "",
+    "fact": "",
+    "prosecution": "",
+    "defense": "",
+    "evidence": {
+        "evidence1": "evidence_content1",
+        "evidence2": "evidence_content2"
+        ..., //所有证据键值列表
+        "evidencen": "evidence_contentn"
+    }
+}
+```
+- 响应格式： API应当返回一个JSON响应，示例输出如下：
+```json
+{
+    "id": 0,
+    "fact": "fact_content1", 
+    "event": {
+            "evidence1": "event1", 
+            "evidence2": "event2",
+            ..., //所有证据键值列表
+            "evidencen": "eventn"
+    }
+}
+```
+
+- 状态码： 正常情况下，请使用HTTP状态码200表示成功响应
+调用代码示例:
+```python
+import requests
+api_url = "https://api.example.com/model"
+
+input_data = {
+    "id": 0,
+    "title": "",
+    "fact": "",
+    "prosecution": "",
+    "defense": "",
+    "evidence": {
+        "evidence1": "evidence_content1",
+        "evidence2": "evidence_content2"
+        ..., # 所有证据键值列表
+        "evidencen": "evidence_contentn"
+    }
+}
+
+response = requests.post(api_url, json=input_data)
+
+result = response.json()
+print("模型处理结果:", result)
+```
+
+请在（11月16日 00:00 - 11月22日 24:00）准备并测试您的API，我们将在11月23日开始正式测试并得到最终分数。
+
+请确保测试期间您的具备稳定性和可靠性，以便在测试时能够正常访问和使用。
+
+
 ## 赛程赛制
 - 9月13日至11月01日，初赛阶段。
 - 10月18日至11月15日，复赛阶段。
-- 11月16日至11月31日，封测阶段。
+- 11月16日至11月22日，封测阶段。
 
 1. 初赛阶段：开启本任务比赛报名，提供小规模数据集，用于编写模型进行训练和测试，选手需在小规模数据上表现超过官方baseline，才能进入复赛。
 2. 复赛阶段：开放第二阶段测试。对于高于任务预设基准算法成绩的队伍，我们将提供全量数据并开放第二阶段的测试提交。
