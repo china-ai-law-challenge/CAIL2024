@@ -41,6 +41,49 @@
     }
 ] 
 ```
+# 封测结果提交形式
+
+对【裁判文书说理生成】评测而言，采用了“服务-请求”方案进行评估。参赛者需要在本地搭建推理服务，之后评估方会通过“访问服务”的方式获取推理结果。参赛者所提供的推理服务须符合以下接口规范要求。
+- 参赛者需要提供一个API的URL或域名，以便我们能够访问服务。例如：https://api.example.com/model.
+- HTTP方法： API应当支持POST请求方法。
+- 请求参数： API应接受一个JSON请求体，示例输入如下：
+```json
+{
+        "fact": "",
+        "id": 0
+ }
+ ```
+- 响应格式： API应当返回一个JSON响应，示例输出如下：
+```json
+{
+    "id": 0, 
+    "response": {
+        "reasoning": "",
+        "judgement": "",
+        "cause": [""],
+        "ethics_or_jurisprudence": { 
+            "key":  "value",
+        }
+    }
+}
+```
+- 状态码： 正常情况下，请使用HTTP状态码200表示成功响应
+调用代码示例:
+```python
+import requests
+api_url = "https://api.example.com/model"
+
+input_data = {
+    "fact": "",
+    "id": 0
+ }
+
+response = requests.post(api_url, json=input_data)
+
+result = response.json()
+print("模型处理结果:", result)
+```
+
 
 # 法理、伦理解释说明
 
