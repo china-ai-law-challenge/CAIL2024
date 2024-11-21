@@ -48,7 +48,7 @@
 ```json
 {
     "url": "https://api.example.com/model",
-    ""
+    "model": ""
 }
 ```
 - HTTP方法： API应当支持POST请求方法。
