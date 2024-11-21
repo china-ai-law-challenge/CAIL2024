@@ -48,8 +48,14 @@
 ```json
 {
     "url": "https://api.example.com/model",
-    "model": ""
+    "model": "https://pan.baidu.com"
 }
+字段含义
+|  元素名称  | 数据类型 | 元素说明  |
+|  ----  | ---- | ---- |
+| url | str |API的URL或域名 |
+| model | str | 存储模型ZIP文件的网盘链接| 
+(注：1. 模型的zip文件需要以网盘的链接的形式给出，网盘不限，只需要保证我们可以在封测阶段可以成功下载模型zip文件。2. 封测阶段的)
 ```
 - HTTP方法： API应当支持POST请求方法。
 - 请求参数： API应接受一个JSON请求体，示例输入如下：
