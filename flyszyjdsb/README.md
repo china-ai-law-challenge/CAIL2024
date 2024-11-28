@@ -143,3 +143,43 @@ python baseline/baseline_withcause.py -d valid -o baseline_withcause_valid.json
 公培元 pygongnlp@gmail.com
 
 马晟杰 msj@ruc.edu.cn
+
+### 封测结果提交形式
+对【裁判文书事实生成】评测而言，采用了“服务-请求”方案进行评估。参赛者需要在本地搭建推理服务，之后评估方会通过“访问服务”的方式获取推理结果。参赛者所提供的推理服务须符合以下接口规范要求。
+
+* 参赛者需要提供一个API的URL或域名，以便我们能够访问服务。例如：https://api.example.com/model.
+* HTTP方法： API应当支持POST请求方法。
+* 请求参数： API应接受一个JSON请求体，示例输入如下：
+```
+{
+    "text": "<案例内容字符串>"
+}
+```
+* 响应格式： API应当返回一个JSON响应，示例输出如下：
+```
+{
+    'legal_elements':[<要素列表>], 
+    'dispute_focus': "<争议焦点字符串>"
+}
+```
+* 调用选手提供的API的示例：
+```
+def call_api(case, api_url):
+    response = None
+    try:
+        response = requests.post(api_url, json={"text": case}, timeout=30)
+    except Exception as e:
+        raise LLMCallError("Failed to call the model API") from e
+
+    # Check the response status code
+    if response.status_code != 200:
+        raise LLMCallError(f"API returned status code {response.status_code}")
+    return response.json()
+```
+### 注意事项：
+* 封测阶段已开放，截止时间为11月30日晚24点。
+* API封装和部署完成后请自行先测试是否可以通过requests.post获取结果；
+* 请确保测试期间您的具备稳定性和可靠性，以便在测试时能够正常访问和使用；
+* 每条样例requests.post time不得超过30s，超过30s记当前样例输出结果为空。
+* 为保证比赛公平公正，第一次成功提交封测阶段的成绩将作为最终成绩； 
+* 各位选手需要提交程序源代码及模型（如果有），压缩后发到邮箱 2023000140@ruc.edu.cn, 相同评估脚本将离线测试结果，如果结果和平台结果不一致，将与选手对接问题，发现作弊行为或不提交将取消成绩。
