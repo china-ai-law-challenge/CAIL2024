@@ -96,23 +96,37 @@
 }
 ```
 
-- 状态码： 正常情况下，请使用HTTP状态码200表示成功响应
+- 格式校验：用于检测格式的正确与否
 调用代码示例:
 ```python
+import json
 import requests
-api_url = "https://api.example.com/model"
 
-input_data = {
-    "id": "2_1_1",
-    "big_ques": "赵某与钱某基于杀人故意将孙某打倒，挖坑欲将孙某掩埋使其窒息而死......",
-    "small_ques": "事实一中，对赵某和钱某的行为如何定性，你持何种观点，为什么？",
-    "score": 7
-}
 
-response = requests.post(api_url, json=input_data)
+def call_user_api(api_url, test_file):
+    lines = open(test_file).readlines()
+    result = []
+    for line in lines:
+        j = json.loads(line)
+        input_data = {
+            "id": j["id"],
+            "big_ques": j["big_ques"],
+            "small_ques": j["small_ques"],
+            "score": j["score"]
+        }
+        response = requests.post(api_url, json=input_data)
+        record = response.json()
+        if "id" not in record or record["id"] != input_data["id"]:
+            raise Exception(input_data["id"] + " does not exist.")
+        if "user_answer" not in record or record["user_answer"] is None or record["user_answer"] == "":
+            raise Exception(input_data["id"] + " has no valid answer.")
+        result.append(record)
+    return result
 
-result = response.json()
-print("模型处理结果:", result)
+
+if __name__ == '__main__':
+    api_url = "add your api url"
+    call_user_api(api_url, "test_data.json")
 ```
 
 **请参赛选手在（12月1日 00:00 - 12月5日 24:00）准备并测试推理服务API（已提供格式校验程序），请在（12月6日 00:00 - 12月7日 24:00）正式提交接口，我们将在（12月8日 00:00 - 12月9日 24:00，务必保证接口可调用）集中调用接口，请确保集中调用期间您的API具备稳定性和可靠性，以便在测试时能够正常访问和使用。人工评价打分将在10号进行。**
